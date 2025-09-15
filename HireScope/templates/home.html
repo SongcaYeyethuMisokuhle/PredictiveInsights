@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal | Home</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Hire<span>Scope</span></div>
+      <ul class="nav-links">
+      </ul>
+     
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+ <section class="hero">
+  <img src="{% static 'images/hero_image.jpg' %}" alt="Hero Image" class="hero-image">
+  <div class="hero-content">
+    <h1>Find Your Dream Job</h1>
+    <p>Browse thousands of job opportunities tailored for you.</p>
+    <form class="search-bar">
+      <input type="text" placeholder="Search for jobs...">
+      <input type="text" placeholder="Location">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+  <!-- Featured Jobs -->
+  <section class="featured">
+    <h2>Featured Jobs</h2>
+    <div class="job-list">
+      <div class="job-card">
+        <h3>Software Engineer</h3>
+        <p>Company XYZ • Johannesburg</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 HireScope. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
