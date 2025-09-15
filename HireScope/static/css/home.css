@@ -30,6 +30,7 @@ body {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
+  font-weight: bold;
 }
 .btn {
   background: #f39c12;
@@ -50,8 +51,9 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: #2c3e50;
   overflow: hidden;
+  font-weight: bold;
 }
 
 .hero-image {
@@ -90,37 +92,33 @@ body {
 .search-bar button:hover {
   background: #e67e22;
 }
-
-/* Featured Jobs */
-.featured {
-  padding: 50px 20px;
-  text-align: center;
-}
-.featured h2 {
-  margin-bottom: 30px;
-  font-size: 32px;
-}
 .job-list {
   display: flex;
-  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
 }
 .job-card {
+  display: block;
   background: #fff;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
-  width: 280px;
+  width: 80%; /* makes it take up most of the screen width */
+  max-width: 600px; /* prevents it from being *too* wide on big screens */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+  margin: 0 auto; /* centers the card */
+  text-align: center;
 }
-.job-card h3 {
-  margin-bottom: 10px;
+.job-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
 }
-.job-card p {
-  margin-bottom: 15px;
-}
-/* Footer */
+
 footer {
   background: #2c3e50;
   color: #fff;

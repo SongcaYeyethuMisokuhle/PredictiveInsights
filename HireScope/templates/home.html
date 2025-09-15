@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Portal | Home</title>
+  <title> HireScope | Home</title>
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
@@ -14,8 +14,9 @@
     <nav class="navbar">
       <div class="logo">Hire<span>Scope</span></div>
       <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'candidate_input' %}">Candidate Form</a></li>
       </ul>
-     
     </nav>
   </header>
 
@@ -23,8 +24,8 @@
  <section class="hero">
   <img src="{% static 'images/hero_image.jpg' %}" alt="Hero Image" class="hero-image">
   <div class="hero-content">
-    <h1>Find Your Dream Job</h1>
-    <p>Browse thousands of job opportunities tailored for you.</p>
+    <h1>Discover Your Hiring Potential</h1>
+    <p>Enter your details to see how far you could progress in the selection journey.</p>
     <form class="search-bar">
       <input type="text" placeholder="Search for jobs...">
       <input type="text" placeholder="Location">
@@ -33,16 +34,18 @@
   </div>
 </section>
 
-  <!-- Featured Jobs -->
+
   <section class="featured">
-    <h2>Featured Jobs</h2>
-    <div class="job-list">
-      <div class="job-card">
-        <h3>Software Engineer</h3>
-        <p>Company XYZ • Johannesburg</p>
-      </div>
-    </div>
-  </section>
+  <h2></h2>
+  <div class="job-list">
+    <a href="{% url 'candidate_input' %}" class="job-card">
+      <h3>Submit Your Details</h3>
+
+      <p>Fill in the form to explore your hiring potential.</p>
+
+    </a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
