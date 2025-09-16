@@ -1,0 +1,1 @@
+web: gunicorn HireScope.wsgi --log-file -
