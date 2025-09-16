@@ -5,7 +5,7 @@ class CandidateForm(forms.ModelForm):
     class Meta:
         model = CandidateEntry
         fields = [
-            "industry", "company", "opportunity", "candidate",
-            "gender", "age", "race", "institution", "aggregate",
-            "qualification", "disciplines", "num_candidates"
+            "Industry", "Company", "Opportunity",
+            "Gender", "Age", "Race", "Institution", "Aggregate",
+            "Qualification", "Disciplines", "NumCandidates"
         ]

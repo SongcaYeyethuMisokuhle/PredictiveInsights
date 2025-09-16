@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from .forms import CandidateForm
+import joblib
+import pandas as pd
+
+model = joblib.load('HireScope/ml_models/RandomForest_pipeline.pkl')
 
 def candidate_input(request):
     prediction = None
@@ -8,11 +12,32 @@ def candidate_input(request):
         form = CandidateForm(request.POST)
         if form.is_valid():
             candidate_entry = form.save()  # Save to DB
-            prediction = f"Details for Candidate {candidate_entry.candidate} saved. ML model will predict later."
+
+             # Convert candidate data to DataFrame for the pipeline
+            input_data = pd.DataFrame([{
+                "Opportunity": candidate_entry.Opportunity,
+                "Age": candidate_entry.Age,
+                "Aggregate": candidate_entry.Aggregate,
+                "NumCandidates": candidate_entry.NumCandidates,
+                "Industry": candidate_entry.Industry,
+                "Company": candidate_entry.Company,
+                "Gender": candidate_entry.Gender,
+                "Race": candidate_entry.Race,
+                "Institution": candidate_entry.Institution,
+                "Qualification": candidate_entry.Qualification,
+                "Disciplines": candidate_entry.Disciplines,
+            }])
+
+            # Predict with the model
+            prediction_result = model.predict(input_data)
+
+            prediction = f"Your chance of progressing: {prediction_result[0]}"
+
     else:
         form = CandidateForm()
     
     return render(request, "candidate_form.html", {"form": form, "prediction": prediction})
+
 
 def home(request):
     return render(request, "home.html")
