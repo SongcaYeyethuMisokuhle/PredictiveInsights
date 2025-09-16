@@ -4,7 +4,10 @@ import joblib
 import pandas as pd
 import os
 
-model = joblib.load("HireScope/ml_models/RandomForest_pipeline.pkl")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "HireScope", "ml_models", "RandomForest_pipeline.pkl")
+
+model = joblib.load(MODEL_PATH)
 
 def candidate_input(request):
     prediction = None
