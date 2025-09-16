@@ -10,7 +10,6 @@ This is a Django-based web application that predicts the progress stage of candi
 
 * Input candidate information via a web form.
 * Predict the candidate’s stage using a pre-trained ML model.
-* Efficient model loading using lazy loading (loaded only when needed).
 * Simple, user-friendly interface.
 
 ---
