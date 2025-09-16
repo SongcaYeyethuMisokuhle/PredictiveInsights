@@ -13,6 +13,7 @@ body {
   padding: 15px 50px;
   background: #2c3e50;
 }
+
 .logo {
   color: #fff;
   font-size: 24px;
@@ -54,6 +55,7 @@ body {
   color: #2c3e50;
   overflow: hidden;
   font-weight: bold;
+  font-size:  larger;
 }
 
 .hero-image {
@@ -64,6 +66,7 @@ body {
   height: 100%;
   object-fit: cover; /* scales the image to cover without distortion */
   z-index: 0;
+  filter: blur(1px); /* blurs whatever is behind */
 }
 
 .hero-content {

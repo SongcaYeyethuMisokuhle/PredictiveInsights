@@ -1,18 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Candidate Progress Predictor</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <h2>Enter Candidate Details</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
 
-    {% if prediction %}
-        <h3>{{ prediction }}</h3>
-    {% endif %}
+    <header>
+    <nav class="navbar">
+      <div class="logo">Hire<span>Scope</span></div>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'candidate_input' %}">Candidate Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div class="form-container">
+        <h2>Enter Candidate Details</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if prediction %}
+            <h3>{{ prediction }}</h3>
+        {% endif %}
+    </div>
 </body>
 </html>
