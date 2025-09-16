@@ -1,0 +1,4 @@
+venv/
+HireScope/ml_models/RandomForest_pipeline.pkl
+__pycache__/
+db.sqlite3
