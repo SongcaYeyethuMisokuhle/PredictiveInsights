@@ -2,8 +2,13 @@ from django.shortcuts import render
 from .forms import CandidateForm
 import joblib
 import pandas as pd
+import os
 
-model = joblib.load('HireScope/ml_models/RandomForest_pipeline.pkl')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+model_path = os.path.join(BASE_DIR, "HireScope", "ml_models", "RandomForest_pipeline.pkl")
+
+# Load the model once
+model = joblib.load(model_path)
 
 def candidate_input(request):
     prediction = None

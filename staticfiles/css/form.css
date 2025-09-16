@@ -1,0 +1,151 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* Full screen form container */
+.form-container {
+    background: #fff;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 40px 60px;
+}
+
+/* Title */
+.form-container h2 {
+    color: #2c3e50;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form fields */
+form p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 12px 0;
+}
+
+label {
+    display: block;
+    flex: 0 0 160px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+}
+
+input, select, textarea {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    color: #2c3e50;
+    transition: border-color 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #999;
+    background: #fff;
+    outline: 2px solid #f39c12;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 16px 20px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #e67e22;
+}
+
+/* Prediction result */
+h3 {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: #2c3e50;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+}
+
+/* Privacy text */
+.privacy-text {
+    color: #2c3e50;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 30px 15px;
+    }
+    
+    .form-container h2 {
+        font-size: 20px;
+    }
+    
+    form p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    label {
+        flex: none;
+    }
+    
+    input, select, textarea, button {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+}
+footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
