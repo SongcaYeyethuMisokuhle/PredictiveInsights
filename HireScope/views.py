@@ -1,11 +1,20 @@
 from django.shortcuts import render
+import requests
 from .forms import CandidateForm
 import joblib
 import pandas as pd
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_PATH = os.path.join(BASE_DIR, "HireScope", "ml_models", "RandomForest_pipeline.pkl")
+MODEL_PATH = "HireScope/ml_models/RandomForest_pipeline.pkl"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=18cTgMn2g3p2OH7AOK54hrLSRoRfDgms_"
+
+# Ensure model exists locally
+if not os.path.exists(MODEL_PATH):
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+    print("Downloading model...")
+    r = requests.get(MODEL_URL, allow_redirects=True)
+    with open(MODEL_PATH, "wb") as f:
+        f.write(r.content)
 
 model = joblib.load(MODEL_PATH)
 
