@@ -31,7 +31,12 @@ def candidate_input(request):
             # Predict with the model
             prediction_result = model.predict(input_data)
 
-            prediction = f"Your chance of progressing: {prediction_result[0]}"
+            prediction_array = prediction_result[0]  
+
+            stage = int(prediction_array[0])                # Stage number
+            progress_score = round(float(prediction_array[1]), 2)  # Score rounded to 2 decimals
+
+            prediction = f"Candidates predicted stage: {stage}, Predicted candidates progress score: {progress_score}"
 
     else:
         form = CandidateForm()
